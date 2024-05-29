@@ -12,5 +12,10 @@ insert into ARTICULOS (ID, NOMBRE, STOCK, PRECIO, SUPLIDOR_ID) values (3, 'NEVER
 insert into ARTICULOS (ID, NOMBRE, STOCK, PRECIO, SUPLIDOR_ID) values (4, 'LATOP DELL LATITUD 3031', 1, 30000, 3);
 insert into ARTICULOS (ID, NOMBRE, STOCK, PRECIO, SUPLIDOR_ID) values (5, 'Cargador de bateria de balanzas', 19, 415, 4);
 insert into ARTICULOS (ID, NOMBRE, STOCK, PRECIO, SUPLIDOR_ID) values (6, 'Apple Nuevo AirTag (Paquete de 4)', 11, 95, 5);
+insert into ARTICULOS (ID, NOMBRE, STOCK, PRECIO, SUPLIDOR_ID) values (7, 'Apple Nuevo AirTag (Paquete de 8)', 11, 95, 5);
 
 SELECT * FROM ARTICULOS
+
+UPDATE articulos 
+    SET STOCK = 20 
+    WHERE NOMBRE = 'NEVERA SAMSUNG'
