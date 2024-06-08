@@ -1,4 +1,5 @@
 
+use INVENTARIO_ELECTRONICO
 create table ARTICULOS (
 	ID INT,
 	NOMBRE VARCHAR(50),
@@ -17,5 +18,31 @@ insert into ARTICULOS (ID, NOMBRE, STOCK, PRECIO, SUPLIDOR_ID) values (7, 'Apple
 SELECT * FROM ARTICULOS
 
 UPDATE articulos 
-    SET STOCK = 20 
+    SET STOCK = 8 
     WHERE NOMBRE = 'NEVERA SAMSUNG'
+
+
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    nombre VARCHAR(50),
+    email VARCHAR(100),
+    contraseña VARCHAR(50),
+    fecha_creacion DATETIME DEFAULT GETDATE()
+);
+
+
+
+-- Insertar usuarios en la tabla
+INSERT INTO usuarios (nombre, email, contraseña, rango)VALUES ('Juan Pérez', 'juan.perez@example.com', 'password123', 'Administrador');
+INSERT INTO usuarios (nombre, email, contraseña)VALUES ('Ana García', 'ana.garcia@example.com', 'securepass456');
+INSERT INTO usuarios (nombre, email, contraseña, rango)VALUES ('Angel Sierra', 'angelestebansierragonzalez@gmail.com', 'Eren2107', 'Administrador');
+
+-- Consultar los usuarios insertados
+SELECT * FROM usuarios;
+
+ALTER TABLE usuarios
+ADD rango VARCHAR(50);
+
+ALTER TABLE usuarios
+ADD CONSTRAINT chk_rango CHECK (rango IN ('Administrador', 'Usuario', 'Invitado'));
+
